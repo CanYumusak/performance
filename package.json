@@ -9,6 +9,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.7.2",
     "gatsby": "^3.2.1",
+    "gatsby-plugin-create-client-paths": "^3.3.0",
     "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-manifest": "^3.2.0",
     "gatsby-plugin-offline": "^4.2.0",

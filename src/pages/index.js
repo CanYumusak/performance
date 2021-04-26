@@ -3,15 +3,15 @@ import "../style.css"
 import Appbar from "../components/appbar"
 import Info from "../components/info"
 import { Helmet } from "react-helmet"
-import { Router } from "@reach/router"
+import { Router, useLocation } from "@reach/router"
 
-function index() {
+const IndexPage = () => {
+  const location = useLocation()?.location?.pathname?.replace("/user/", "") || "yumusak"
+
   return (
     <div>
       <Appbar />
-      <Router>
-        <InfoRoute path="/user" />
-      </Router>
+      <Info queriedUser={location} />
       <Helmet>
         <meta charSet="utf-8" />
         <title>Home | Can Yumusak</title>
@@ -20,12 +20,4 @@ function index() {
   )
 }
 
-const InfoRoute = ({ component: Component, location, ...rest }) => {
-  // const user = location.pathname.replace("/user/", "")
-  return <Info
-    queriedUser={location}
-  />
-}
-
-
-export default index
+export default IndexPage
