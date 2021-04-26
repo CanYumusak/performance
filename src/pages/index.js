@@ -10,7 +10,7 @@ function index() {
     <div>
       <Appbar />
       <Router>
-        <InfoRoute path="user/:queriedUser" />
+        <Info path="user/:queriedUser" />
       </Router>
       <Helmet>
         <meta charSet="utf-8" />
