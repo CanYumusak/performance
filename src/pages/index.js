@@ -9,7 +9,7 @@ function index() {
     <div>
       <Appbar />
       <Info
-        queriedUser={"yumusak"}
+        path={"/user/:queriedUser"}
       />
       <Helmet>
         <meta charSet="utf-8" />
