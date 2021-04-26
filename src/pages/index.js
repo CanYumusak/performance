@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet"
 import { Router, useLocation } from "@reach/router"
 
 const Index = () => {
-  console.log(useLocation())
   return (
     <div>
       <Appbar />
