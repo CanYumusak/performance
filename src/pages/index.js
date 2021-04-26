@@ -10,10 +10,7 @@ function index() {
     <div>
       <Appbar />
       <Router>
-        <Info
-          default
-          path="/user/:queriedUser"
-        />
+        <InfoRoute />
       </Router>
       <Helmet>
         <meta charSet="utf-8" />
@@ -22,5 +19,13 @@ function index() {
     </div>
   )
 }
+
+const InfoRoute = ({ component: Component, location, ...rest }) => {
+  const user = location.pathname.replace("/user/", "")
+  return <Info
+    queriedUser={user}
+  />
+}
+
 
 export default index
