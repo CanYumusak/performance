@@ -21,9 +21,9 @@ function index() {
 }
 
 const InfoRoute = ({ component: Component, location, ...rest }) => {
-  const user = location.pathname.replace("/user/", "")
+  // const user = location.pathname.replace("/user/", "")
   return <Info
-    queriedUser={user}
+    queriedUser={location}
   />
 }
 
