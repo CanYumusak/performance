@@ -5,13 +5,13 @@ import Info from "../components/info"
 import { Helmet } from "react-helmet"
 import { Router, useLocation } from "@reach/router"
 
-function index() {
+const Index = () => {
   console.log(useLocation())
   return (
     <div>
       <Appbar />
       <Router>
-        <Info path="/" queriedUser="yumusak" />
+        <Info default path="/" queriedUser="yumusak" />
         <Info path="user/:queriedUser" />
       </Router>
       <Helmet>
@@ -23,4 +23,4 @@ function index() {
 }
 
 
-export default index
+export default Index
