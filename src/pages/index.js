@@ -11,7 +11,8 @@ function index() {
       <Appbar />
       <Router>
         <Info
-          path={"/user/:queriedUser"}
+          default
+          path="/user/:queriedUser"
         />
       </Router>
       <Helmet>
