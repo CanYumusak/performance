@@ -110,7 +110,7 @@ server {
   }
 
   location /user {
-    try_files $uri $uri/ /index.html;
+    try_files $uri $uri/ /user/index.html;
   }
 
   {{ if $.CLIENT_MAX_BODY_SIZE }}client_max_body_size {{ $.CLIENT_MAX_BODY_SIZE }};{{ end }}
