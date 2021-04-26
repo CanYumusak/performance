@@ -3,16 +3,18 @@ import "../style.css"
 import Appbar from "../components/appbar"
 import Info from "../components/info"
 import { Helmet } from "react-helmet"
+import { Router } from "@reach/router"
 
-function index(props) {
-  console.log(props.location)
-  const user = location.path.pathname || "yumusak"
+function index() {
   return (
     <div>
       <Appbar />
-      <Info
-        queriedUser={user}
-      />
+      <Router>
+        <Info
+          default
+          path="/user/:queriedUser"
+        />
+      </Router>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Home | Can Yumusak</title>
