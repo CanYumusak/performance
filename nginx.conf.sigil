@@ -109,7 +109,7 @@ server {
     {{ if $.PROXY_X_FORWARDED_SSL }}proxy_set_header X-Forwarded-Ssl {{ $.PROXY_X_FORWARDED_SSL }};{{ end }}
   }
 
-  location /user {
+  location /user/ {
     try_files $uri $uri/ /user/index.html;
   }
 
