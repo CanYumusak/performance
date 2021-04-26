@@ -3,13 +3,15 @@ import "../style.css"
 import Appbar from "../components/appbar"
 import Info from "../components/info"
 import { Helmet } from "react-helmet"
-import { Router } from "@reach/router"
+import { Router, useLocation } from "@reach/router"
 
 function index() {
+  console.log(useLocation())
   return (
     <div>
       <Appbar />
       <Router>
+        <Info path="/" queriedUser="yumusak" />
         <Info path="user/:queriedUser" />
       </Router>
       <Helmet>
