@@ -18,6 +18,12 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/*`] }
     },
+    {
+      resolve: '@mkitio/gatsby-theme-password-protect',
+      options: {
+        password: '2JRMayPwuQkH78f9'
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
