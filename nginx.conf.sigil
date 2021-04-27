@@ -84,8 +84,6 @@ server {
 
   location    / {
 
-    try_files $uri /index.html;
-
     gzip on;
     gzip_min_length  1100;
     gzip_buffers  4 32k;
@@ -111,6 +109,9 @@ server {
     {{ if $.PROXY_X_FORWARDED_SSL }}proxy_set_header X-Forwarded-Ssl {{ $.PROXY_X_FORWARDED_SSL }};{{ end }}
   }
 
+  location /user {
+      try_files $uri /index.html;
+  }
 
   {{ if $.CLIENT_MAX_BODY_SIZE }}client_max_body_size {{ $.CLIENT_MAX_BODY_SIZE }};{{ end }}
   include {{ $.DOKKU_ROOT }}/{{ $.APP }}/nginx.conf.d/*.conf;
