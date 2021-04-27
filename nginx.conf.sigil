@@ -84,6 +84,8 @@ server {
 
   location    / {
 
+    try_files $uri;
+
     gzip on;
     gzip_min_length  1100;
     gzip_buffers  4 32k;
@@ -107,10 +109,6 @@ server {
     proxy_set_header X-Forwarded-Proto {{ $.PROXY_X_FORWARDED_PROTO }};
     proxy_set_header X-Request-Start $msec;
     {{ if $.PROXY_X_FORWARDED_SSL }}proxy_set_header X-Forwarded-Ssl {{ $.PROXY_X_FORWARDED_SSL }};{{ end }}
-  }
-
-  location /user/ {
-    try_files $uri $uri/ /user/index.html;
   }
 
   {{ if $.CLIENT_MAX_BODY_SIZE }}client_max_body_size {{ $.CLIENT_MAX_BODY_SIZE }};{{ end }}
